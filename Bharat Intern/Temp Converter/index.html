@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlmdMrzASjn7_1Tpx0WhSXAZ5uE1-zBRhukq8mPPd85D5b587HBxIX0HMolMybNLtqKGQ&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <!-- Navbar Logo -->
+        <div class="logo">
+          <!-- Logo Placeholder for Inlustration -->
+          <a href="#">FRONTENDGENIE</a>
+        </div>
+    
+        <!-- Navbar Links -->
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li><!--
+       --><li><a href="converter.html">Converter</a></li><!--
+       --><li><a href="https://furqan-portfolio-26.netlify.app/ ">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    
+    <!-- Menu Icon -->
+    <div class="menuIcon">
+      <span class="icon icon-bars"></span>
+      <span class="icon icon-bars overlay"></span>
+    </div>
+    
+    <div class="overlay-menu">
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li><!--
+         --><li><a href="converter.html">Converter</a></li><!--
+         --><li><a href="https://furqan-portfolio-26.netlify.app/ ">About</a></li>
+          </ul>
+    </div>
+
+<div class="main">
+    <div class="graphic">
+        <div class="info">
+        <h1>Temperature Converter</h1>
+        <h3>A temperature converter helps in the conversion of the measurement units
+             of the temperature recorded in a particular unit. </h3>  
+        </div>
+       <img src="5989b7149f2d899ac53c1078bdddc919.gif"></img>
+    </div>
+</div>
+
+<!-- page 2 -->
+
+<script>
+     let menuIcon = document.querySelector('.menuIcon');
+        let nav = document.querySelector('.overlay-menu');
+
+        menuIcon.addEventListener('click', () => {
+            if (nav.style.transform != 'translateX(0%)') {
+                nav.style.transform = 'translateX(0%)';
+                nav.style.transition = 'transform 0.2s ease-out';
+            } else { 
+                nav.style.transform = 'translateX(-100%)';
+                nav.style.transition = 'transform 0.2s ease-out';
+            }
+        });
+
+
+        // Toggle Menu Icon ========================================
+        let toggleIcon = document.querySelector('.menuIcon');
+
+        toggleIcon.addEventListener('click', () => {
+            if (toggleIcon.className != 'menuIcon toggle') {
+                toggleIcon.className += ' toggle';
+            } else {
+                toggleIcon.className = 'menuIcon';
+            }
+        });
+</script>
+</body>
+</html>

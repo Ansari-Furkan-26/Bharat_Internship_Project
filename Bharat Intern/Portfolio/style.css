@@ -1,0 +1,248 @@
+  @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --bg-color: #121b2d;
+    --header-bg-color: #0d121c;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    background-color: var(--bg-color);
+    color: #f3f5f9;
+    display: flex;
+    align-items: center;
+    padding: 0px 16px 0px 40px;
+    height: 100vh;
+    font-family: 'Maven Pro', sans-serif;
+    gap: 24px;
+  }
+  
+  /*     navbar     */
+  ul {
+    list-style: none;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px);
+    background-color: var(--header-bg-color);
+    width: 215px;
+    align-content: center;
+    justify-content: space-between;
+    padding: 32px 0px 24px 16px;
+    border-radius: 2px;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .group h3 {
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    color: #60626c;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .menu-item {
+    display: flex;
+    gap: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    height: 34px;
+    align-items: center;
+    padding: 3px 6px;
+    position: relative;
+    border-radius: 4px 0px 0px 4px;
+    text-transform: capitalize;
+  }
+  
+  .menu .menu-item:hover {
+    background-color: var(--bg-color);
+  }
+  
+  .menu-item:before {
+    content: "";
+    position: absolute;
+    right: 1px;
+    top: -16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 0 0 10px 0;
+    transform: rotate(10deg);
+  }
+  
+  .menu-item:hover::before {
+    background: var(--header-bg-color);
+    box-shadow: 10px 0 0 0 var(--bg-color);
+  }
+  
+  .menu-item:after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: -16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 0 10px 0 0;
+  }
+  
+  .menu-item:hover::after {
+    box-shadow: 0 -10px 0 0 var(--bg-color);
+  }
+  
+  .menu-item .icon {
+    width: 24px;
+    height: 24px;
+    background: #0097fd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu-item .icon i {
+    font-size: 1.6rem;
+  }
+  
+  .navbar .group:nth-child(2) .menu .menu-item:nth-child(1) .icon {
+    background: #fc861f;
+  }
+  
+  .navbar .group:nth-child(2) .menu .menu-item:nth-child(2) .icon {
+    background: #f7b405;
+  }
+  
+  .navbar .group:nth-child(2) .menu .menu-item:nth-child(3) .icon {
+    background: #45ced1;
+  }
+  
+  .navbar .group:nth-child(2) .menu .menu-item:nth-child(4) .icon {
+    background: #9257d6;
+  }
+  
+  .user {
+    display: flex;
+    width: calc(100% - 16px);
+    padding-top: 16px;
+    border-top: 1px solid #292e38;
+    gap: 8px;
+  }
+  
+  .avatar {
+    background-image: url("profile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info .name {
+    font-size: 1.2rem;
+  }
+  
+  .info .account-id {
+    font-size: 1rem;
+    color: #60626c;
+  }
+  
+  main {
+    width: 100%;
+    background: var(--header-bg-color);
+    height: calc(100% - 40px);
+    border-radius: 2px;
+  }
+
+  /*    Homepage    */
+  .frame{
+    height: 94%;
+    width: 80%;
+    background-color: #121212;
+    background-image: url("digital\ art\ 2018-19.jpg");
+    border-radius: 0.5%;
+    background-position: 650px 64px;
+    background-repeat: no-repeat;
+  }
+  h1{
+    margin: 300px 10px;
+  }
+
+  @media (max-width: 825px) {
+    .header {
+      width: auto;
+      padding-right: 16px;
+    }
+    .menu-item {
+      border-radius: 4px;
+      padding: 0px 6px;
+    }
+    .header h3,
+    .info,
+    .menu-item span,
+    .menu-item::before,
+    .menu-item:after {
+      display: none;
+    }
+    .user {
+      width: 100%;
+    }
+    .navbar{
+      gap: 76px;
+    }
+  }
+  
+  .header, main{
+    min-height: 540px;
+  }
+  #font {
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+  }
+  #font a {
+    color: #9257d6;
+  }
+  
+  @media (max-height: 500px){
+    body{
+      min-height: 100vh;
+      height: auto;
+      padding: 30px;
+    }
+  }

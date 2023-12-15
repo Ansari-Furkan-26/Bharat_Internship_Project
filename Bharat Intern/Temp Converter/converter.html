@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlmdMrzASjn7_1Tpx0WhSXAZ5uE1-zBRhukq8mPPd85D5b587HBxIX0HMolMybNLtqKGQ&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <title>Converter</title>
+    <style>
+      .converter{
+        border: 5px solid;
+        margin: auto;
+        width: 90%;
+        padding: 10px;
+        margin-top: 100px;
+      }
+      .types{
+        color: white;
+        margin: auto;
+        margin-top: 20px;
+        width: 90%;
+        padding: 20px;
+        background-color: rgba(38,42,53,255);
+        border-radius: 20px;
+        height: 150px;
+      }
+      span{
+        font-size: 18px;
+        font-weight: 100;
+      }
+      .types h2{
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .convert{
+        display: flex;
+        width: 800px;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      p{
+        margin-top: 10px;
+      }
+      input{
+        margin-left: 10px;
+        width: 250px;
+        display: inline-block;
+        color: #282825;
+        font-weight: bold;
+        text-align: center;
+        background-color: #d0c9d4;
+        padding: .4em 1.8em;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        border-radius: 4px;
+      }
+      #outputCelcius, #outputKelvin, #outputKelvinn{
+        margin-left: 10px;
+        width: 250px;
+        display: inline-block;
+        color: #ffffff9a;
+        text-align: center;
+        background-color: #0c0c0cbe;
+        padding: .35em 1.8em;
+        font-size: 15px;
+        border: none;
+        cursor: none;
+        outline: none;
+        border-radius: 4px;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+  /*======================================================
+                      Mobile Menu Menu Icon
+    ======================================================*/
+    @media(max-width: 640px) {
+      input{
+        width: 88%;
+      }
+      .types h2{
+        font-size: 16px;
+      }
+      .convert{
+        display: inline;
+      }
+      #outputCelcius, #outputKelvin, #outputKelvinn{
+        width: 90%;
+        margin-left: -1px
+      }
+      .temp{
+        margin-left: 12px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <!-- Navbar Logo -->
+        <div class="logo">
+          <!-- Logo Placeholder for Inlustration -->
+          <a href="#home">FRONTENDGENIE</a>
+        </div>
+    
+        <!-- Navbar Links -->
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li><!--
+       --><li><a href="converter.html">Converter</a></li><!--
+       --><li><a href="https://furqan-portfolio-26.netlify.app/ ">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Menu Icon -->
+    <div class="menuIcon">
+      <span class="icon icon-bars"></span>
+      <span class="icon icon-bars overlay"></span>
+    </div>
+    
+    <div class="overlay-menu">
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li><!--
+         --><li><a href="converter.html">Converter</a></li><!--
+         --><li><a href="https://furqan-portfolio-26.netlify.app/ ">About</a></li>
+          </ul>
+    </div>
+
+    <!-- F - C   -->
+    <div class="converter">
+      <div class="types">
+        <h2>Fahrenheit (°F) - Celsius (°C)</h2>
+        
+        <div class="convert">
+          <p><input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)"></p>
+        <p class="temp">Celcius <span id="outputCelcius">Celcius</span></p>
+        </div>
+        <script>
+        function temperatureConverter(valNum) {
+          valNum = parseFloat(valNum);
+          document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+        }
+        </script>
+      </div>
+
+      <!-- F - K -->
+      <div class="types">
+        <h2>Fahrenheit (°F) - Kelvin (K)</h2>
+        <div class="convert">
+          <p><input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter1(this.value)" onchange="temperatureConverter1(this.value)">
+          <p class="temp">Kelvin: <span id="outputKelvin">Kelvin</span></p>
+        </div>
+        
+        <script>
+          function temperatureConverter1(valNumb) {
+            valNumb = parseFloat(valNumb);
+            document.getElementById("outputKelvin").innerHTML=((valNumb-32)/1.8)+273.15;
+          }
+          </script>
+      </div>
+
+      <!-- C - K -->
+      <div class="types">
+        <h2> Celsius (°C) - Kelvin (K)</h2>
+        <div class="convert">
+          <p><input id="inputFahrenheit" type="number" placeholder="Celsius" oninput="temperatureConverter2(this.value)" onchange="temperatureConverter2(this.value)">
+          <p class="temp">Kelvin: <span id="outputKelvinn">Kelvin</span></p>
+        </div>
+        
+        <script>
+          function temperatureConverter2(valNumbe) {
+            valNumbe = parseFloat(valNumbe);
+            document.getElementById("outputKelvinn").innerHTML=valNumbe+273.15;
+          }
+          </script>
+      </div>
+    </div>
+    
+    <script>
+        let menuIcon = document.querySelector('.menuIcon');
+           let nav = document.querySelector('.overlay-menu');
+   
+           menuIcon.addEventListener('click', () => {
+               if (nav.style.transform != 'translateX(0%)') {
+                   nav.style.transform = 'translateX(0%)';
+                   nav.style.transition = 'transform 0.2s ease-out';
+               } else { 
+                   nav.style.transform = 'translateX(-100%)';
+                   nav.style.transition = 'transform 0.2s ease-out';
+               }
+           });
+   
+   
+           // Toggle Menu Icon ========================================
+           let toggleIcon = document.querySelector('.menuIcon');
+   
+           toggleIcon.addEventListener('click', () => {
+               if (toggleIcon.className != 'menuIcon toggle') {
+                   toggleIcon.className += ' toggle';
+               } else {
+                   toggleIcon.className = 'menuIcon';
+               }
+           });
+   </script>
+</body>
+</html>
